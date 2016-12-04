@@ -10,7 +10,12 @@
 #
 ### El contenido del trabajo consiste en la solución en lenguaje C++ para dos implementaciones: La primera implementación consiste en un simulador del comportamiento de dos niveles de Memoria Cache para dos procesadores (CPU0 y CPU1) implementando el protocolo de coherencia MESI. Cada procesador tiene un cache L1, y ambos comparten un único cahce L2. para diferentes niveles de asociatividad en lenguaje de programación de alto nivel (C++). 
 ### Se requiere incluir en el mismo directorio donde se ubica el programa un archivo .trace con las direcciones de memoria y datos y el tipo de solicitud (Lectura/Escritura), para el caso del simulador del protocolo MESI. Se incluye el archivo main.cpp con el código de la implementación y un Makefile para realizar la compilación y creación del ejecutable. El Makefile utiliza g++ para la compilación, en caso de querer usar otro compilador omitir el uso del Makefile y usar el código correspondiente a preferencia.
-### La segunda implementación de este trabajo consta de 
+
+### La segunda implementación de este trabajo consiste en un programa escrito en C++ el cual calcula los números primos menores un valor predeterminado, en este caso 5000, utilizando el algoritmo de la Criba de Etatóstenes. El programa consta de dos versiones, una sin paralelismo y la otra paralelismo, para esto se logra utilizando una librería de paso de mensajes llamada OpenMPI. Para el funcionamiento de este programa se necesitan 2 librerías:
+
+    $ sudo apt-get install libopenmpi-dev  
+    $ sudo apt-get install mpich
+
 
 #Configuración Programa de Protocolo MESI
 ## Estructura de los Cache
@@ -31,3 +36,10 @@
 #### Elimina el ejecutable
 
 #Configuración Programa de Criba de Eratóstenes
+## Corriendo el Programa 
+### Para correr la versión sin paralelismo:
+    $ ./criba
+### Para correr la versión con paralelismo:
+    $ mpirun -np 2 cribampi
+`
+
